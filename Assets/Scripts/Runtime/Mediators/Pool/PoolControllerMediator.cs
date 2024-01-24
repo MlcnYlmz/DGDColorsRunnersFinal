@@ -15,7 +15,6 @@ namespace Runtime.Mediators.Pool
         public override void OnRegister()
         {
             base.OnRegister();
-            PlayerSignals.onStageAreaSuccessful.AddListener(View.OnActivateTweens);
             PlayerSignals.onStageAreaSuccessful.AddListener(View.OnChangePoolColor);
         }
 
@@ -23,7 +22,6 @@ namespace Runtime.Mediators.Pool
         {
             base.OnRemove();
 
-            PlayerSignals.onStageAreaSuccessful.RemoveListener(View.OnActivateTweens);
             PlayerSignals.onStageAreaSuccessful.RemoveListener(View.OnChangePoolColor);
         }
 

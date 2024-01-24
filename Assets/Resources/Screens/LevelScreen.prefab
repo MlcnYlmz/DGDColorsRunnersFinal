@@ -105,8 +105,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e82fcf58e57f034991e77c43d1f4ed3, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e82fcf58e57f034991e77c43d1f4ed3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 88548b503704f4e45a5b0542341c52ad, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 88548b503704f4e45a5b0542341c52ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -390,8 +390,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e82fcf58e57f034991e77c43d1f4ed3, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e82fcf58e57f034991e77c43d1f4ed3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 88548b503704f4e45a5b0542341c52ad, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 88548b503704f4e45a5b0542341c52ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -503,12 +503,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7282406559574445235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be76b27be8c03f84d9057e64fda867ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 42ed803c68df6c74cbda56e7a269b325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showDebug: 0
+  _showDebug: 1
   stageImages:
-  - {fileID: 0}
+  - {fileID: 4837950001364511120}
   - {fileID: 5729893160850888512}
   - {fileID: 7480261392054910708}
   levelTexts:

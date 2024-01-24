@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4bdc72b66dec3468f61d01382427cb, type: 3}
+  m_Script: {fileID: 11500000, guid: b091e95a8bec7c64d85f5c16a914d54c, type: 3}
   m_Name: CD_Level
   m_EditorClassIdentifier: 
   Data:
   - PoolData:
+    - RequiredObjectCount: 5
     - RequiredObjectCount: 10
-    - RequiredObjectCount: 15
-    - RequiredObjectCount: 20
+    - RequiredObjectCount: 10
+  - PoolData:
+    - RequiredObjectCount: 12
+    - RequiredObjectCount: 14
+    - RequiredObjectCount: 22

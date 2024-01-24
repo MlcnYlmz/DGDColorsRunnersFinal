@@ -4,6 +4,7 @@ using Runtime.Model.Player;
 using Runtime.Signals;
 using Runtime.Views.Player;
 using Runtime.Views.Pool;
+using Runtime.Views.Stack;
 using UnityEngine;
 
 namespace Runtime.Mediators.Player
@@ -16,6 +17,8 @@ namespace Runtime.Mediators.Player
         [Inject] public PlayerSignals PlayerSignals { get; set; }
         [Inject] public CoreGameSignals CoreGameSignals { get; set; }
 
+        [Inject] public StackSignals StackSignals { get; set; }
+        
         [Inject] public UISignals UISignals { get; set; }
 
         public override void OnRegister()
@@ -30,9 +33,15 @@ namespace Runtime.Mediators.Player
             View.onReset += OnReset;
             View.onStageAreaEntered += OnStageAreaEntered;
             View.onFinishAreaEntered += OnFinishAreaEntered;
+            View.onCollectableInteract += OnCollectableInteract;
+            View.onCollectableInteraction += OnCollectableInteraction;
         }
 
-
+        private void OnCollectableInteract(GameObject collectableObject)
+        {
+            
+        }
+        
         private void OnPlay()
         {
             View.IsReadyToPlay(true);
@@ -92,6 +101,15 @@ namespace Runtime.Mediators.Player
             View.onReset -= OnReset;
             View.onStageAreaEntered -= OnStageAreaEntered;
             View.onFinishAreaEntered -= OnFinishAreaEntered;
+            View.onCollectableInteract -= OnCollectableInteract;
+            View.onCollectableInteraction -= OnCollectableInteraction;
+
+
+        }
+
+        private void OnCollectableInteraction()
+        {
+            StackSignals.onAddStack.Dispatch();
         }
 
         public override void OnEnabled()

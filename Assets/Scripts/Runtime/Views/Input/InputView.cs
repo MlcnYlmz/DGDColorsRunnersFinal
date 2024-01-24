@@ -108,7 +108,6 @@ namespace Runtime.Views.Input
         public void OnReset()
         {
             _isInputEnabled = false;
-            //_isFirstTimeTouchTaken = false;
             _isTouching = false;
         }
     }

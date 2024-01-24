@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccdc351219754744b4fc5155557d4f2, type: 3}
   m_Name: TestDeviceList
   m_EditorClassIdentifier: 
-  List: []

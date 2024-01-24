@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8fc1080cadf4a438470c20732d8ff5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e59b367c44a8ad4e917745f87516db4, type: 3}
   m_Name: ES3Defaults
   m_EditorClassIdentifier: 
   settings:
@@ -32,9 +32,9 @@ MonoBehaviour:
     - rich-base.runtime
     - ES3.Runtime
     - sc.stylizedwater2.runtime
-    - StompyRobot.SRF
     - Assembly-CSharp
     - Cinemachine
+    - StompyRobot.SRF
     - rich-base.editor
     - Boxophobic.Utils.Editor
     - Assembly-CSharp-firstpass
