@@ -1,8 +1,5 @@
-﻿using Runtime.Data.ValueObject;
-using Runtime.Signals;
-using Runtime.Views.Stack;
+﻿using Runtime.Signals;
 using strange.extensions.command.impl;
-using UnityEngine;
 
 namespace Runtime.Controller.StackControllers
 {
@@ -12,7 +9,7 @@ namespace Runtime.Controller.StackControllers
         
         public override void Execute()
         {
-            StackSignals.onInteractionCollectable.Dispatch();
+            StackSignals.onInteractionCollect.Dispatch();
         }
     }
 }

@@ -16,9 +16,7 @@ namespace Runtime.Mediators.Player
         [Inject] public InputSignals InputSignals { get; set; }
         [Inject] public PlayerSignals PlayerSignals { get; set; }
         [Inject] public CoreGameSignals CoreGameSignals { get; set; }
-
         [Inject] public StackSignals StackSignals { get; set; }
-        
         [Inject] public UISignals UISignals { get; set; }
 
         public override void OnRegister()
@@ -35,6 +33,18 @@ namespace Runtime.Mediators.Player
             View.onFinishAreaEntered += OnFinishAreaEntered;
             View.onCollectableInteract += OnCollectableInteract;
             View.onCollectableInteraction += OnCollectableInteraction;
+            View.onStackSystem += OnCollectable;
+            View.onStackLoc += SetStackLocation;
+        }
+        
+        private void OnCollectable(GameObject collectableObject)
+        {
+            StackSignals.onStackCollect?.Dispatch(collectableObject);
+            
+        }
+        private void SetStackLocation(UnityEngine.Vector2 pos)
+        {
+            StackSignals.onStackFollow?.Dispatch(pos);
         }
 
         private void OnCollectableInteract(GameObject collectableObject)
@@ -103,6 +113,8 @@ namespace Runtime.Mediators.Player
             View.onFinishAreaEntered -= OnFinishAreaEntered;
             View.onCollectableInteract -= OnCollectableInteract;
             View.onCollectableInteraction -= OnCollectableInteraction;
+            View.onStackSystem -= OnCollectable;
+            View.onStackLoc += SetStackLocation;
 
 
         }

@@ -3,7 +3,6 @@ using Rich.Base.Runtime.Abstract.View;
 using Runtime.Data.ValueObject;
 using Runtime.Enums;
 using Runtime.Key;
-using Runtime.Signals;
 using Runtime.Views.Stack;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -22,6 +21,8 @@ namespace Runtime.Views.Player
         [SerializeField] private ParticleSystem confettiParticle;
 
         [Header("Events")]
+        public UnityAction<GameObject> onStackSystem = delegate { };
+        public UnityAction<Vector2> onStackLoc = delegate { };
         public UnityAction onCollectableInteraction = delegate { };
         public UnityAction onPlayerInteract = delegate { };
         public UnityAction<GameObject> onCollectableInteract = delegate { };
@@ -54,6 +55,13 @@ namespace Runtime.Views.Player
         {
             playerData = data;
         }
+        
+        internal void StackLocation()
+        {
+            var position = transform.position;
+            Vector2 pos = new Vector2(position.x, position.z);
+            onStackLoc?.Invoke(pos);
+        }
 
         public void OnInputDragged(HorizontalInputParams horizontalInputParams)
         {
@@ -61,12 +69,18 @@ namespace Runtime.Views.Player
             clampValues = horizontalInputParams.ClampValues;
         }
 
+
         public void OnInputReleased() => IsReadyToMove(false);
 
         public void OnInputTaken() => IsReadyToMove(true);
 
         private void FixedUpdate()
         {
+            if (isReadyToMove) 
+            {
+                StackLocation();
+            }
+            
             if (!isReadyToPlay)
             {
                 StopPlayer();
@@ -118,8 +132,8 @@ namespace Runtime.Views.Player
 
             if (other.gameObject.name == collectableTag)
             {
-                onCollectableInteraction?.Invoke();
-                Debug.Log("Collectable");
+                onStackSystem?.Invoke(other.transform.gameObject);
+                Debug.Log("Collected");
             }
 
             if (other.gameObject.name == gateTag)

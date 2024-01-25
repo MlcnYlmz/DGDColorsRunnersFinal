@@ -55,7 +55,6 @@ namespace Runtime.Context
             mediationBinder.BindView<InputView>().ToMediator<InputMediator>();
             mediationBinder.BindView<PoolControllerView>().ToMediator<PoolControllerMediator>();
             mediationBinder.BindView<StackView>().ToMediator<StackMediator>();
-            //mediationBinder.BindView<StackView>().ToMediator<PlayerMediator>();
 
             //Command Bindings
             commandBinder.Bind(_levelSignals.onInitializeLevel).To<InitializeLevelCommand>();
