@@ -16,6 +16,7 @@ using Runtime.Model.Stack;
 using Runtime.Signals;
 using Runtime.Views.Camera;
 using Runtime.Views.Input;
+using Runtime.Views.Obstacle;
 using Runtime.Views.Player;
 using Runtime.Views.Pool;
 using Runtime.Views.Stack;
@@ -30,6 +31,7 @@ namespace Runtime.Context
         private InputSignals _inputSignals;
         private LevelSignals _levelSignals;
         private StackSignals _stackSignals;
+        private ObstacleSignals _obstacleSignals;
 
         protected override void mapBindings()
         {
@@ -42,6 +44,7 @@ namespace Runtime.Context
             _inputSignals = injectionBinder.BindCrossContextSingletonSafely<InputSignals>();
             _levelSignals = injectionBinder.BindCrossContextSingletonSafely<LevelSignals>();
             _stackSignals = injectionBinder.BindCrossContextSingletonSafely<StackSignals>();
+            _obstacleSignals = injectionBinder.BindCrossContextSingletonSafely<ObstacleSignals>();
 
             injectionBinder.Bind<ILevelModel>().To<LevelModel>().CrossContext().ToSingleton();
             injectionBinder.Bind<IInputModel>().To<InputModel>().CrossContext().ToSingleton();
@@ -55,6 +58,7 @@ namespace Runtime.Context
             mediationBinder.BindView<InputView>().ToMediator<InputMediator>();
             mediationBinder.BindView<PoolControllerView>().ToMediator<PoolControllerMediator>();
             mediationBinder.BindView<StackView>().ToMediator<StackMediator>();
+            mediationBinder.BindView<ObstacleView>().ToMediator<ObstacleMediator>();
 
             //Command Bindings
             commandBinder.Bind(_levelSignals.onInitializeLevel).To<InitializeLevelCommand>();
