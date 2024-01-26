@@ -15,21 +15,16 @@ namespace Runtime.Mediators.Stack
         public override void OnRegister()
         {
             base.OnRegister();
-            ObstacleSignals.onColorObstacle.AddListener(ObstacleView.);
+            //ObstacleSignals.onColorObstacle.AddListener(ObstacleView.);
         }
 
         public override void OnRemove()
         {
             base.OnRemove();
-            ObstacleSignals.onColorObstacle.RemoveListener(ObstacleView.);
+            //ObstacleSignals.onColorObstacle.RemoveListener(ObstacleView.);
 
         }
-
-        private void OnInteractCollect()
-        {
-            Debug.LogWarning("InteractCollect Worked");
-        }
-
+        
         public override void OnEnabled()
         {
             base.OnEnabled();

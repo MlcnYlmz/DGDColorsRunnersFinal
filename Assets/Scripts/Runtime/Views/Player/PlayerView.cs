@@ -40,6 +40,7 @@ namespace Runtime.Views.Player
         private const string groundRedTag = "GroundRed";
         private const string groundGreenTag = "GroundGreen";
         private const string groundBlueTag = "GroundBlue";
+        private const string obstacleTag = "Obstacle";
 
         private const float scaleCounter = 1.7f;
 
@@ -147,6 +148,9 @@ namespace Runtime.Views.Player
 
             if (other.CompareTag(groundBlueTag))
                 Debug.Log("Ground Blue");
+            
+            if (other.CompareTag(obstacleTag))
+                Debug.Log(message:"Interact With Obstacle");
         }
 
         private void HandleGateCollision(Collider other)

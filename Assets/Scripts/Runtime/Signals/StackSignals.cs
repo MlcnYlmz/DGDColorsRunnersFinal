@@ -10,5 +10,6 @@ namespace Runtime.Signals
         public Signal onInteractionCollect = new Signal();
         public Signal<Vector2> onStackFollow = new Signal<Vector2>();
         public Signal<Vector2> onStackMover = new Signal<Vector2>();
+        public Signal onInteractObstacle = new Signal();
     }
 }
